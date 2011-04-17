@@ -1,0 +1,8 @@
+%h2= post.title
+%i= "-" + post.name
+.postPreview
+  = post.content[0,160] + "..."
+  = link_to 'Show', post
+  .postCommands
+    = link_to 'Edit', edit_post_path(post)
+    = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
