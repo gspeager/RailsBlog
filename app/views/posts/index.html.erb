@@ -1,10 +1,11 @@
 <h1>Listing posts</h1>
-
+<%= will_paginate @posts %>
   <% @posts.each do |post| %>
     <%= render :partial => "posts/postSnippet",
                :locals => { :post => post } %>
+    <br />
   <% end %>
-
+<%= will_paginate @posts %>
+<%= page_entries_info @posts %>
 <br />
-
 <%= link_to 'New Post', new_post_path %>
